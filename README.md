@@ -11,6 +11,7 @@
 - [Chapter 1: JavaScript Basics](#chapter-1-javascript-basics)
 - [Chapter 2: JavaScript Concepts](#chapter-2-javascript-concepts)
 - [Chapter 3: Identifiers & Literals](#chapter-3-identifiers--literals)
+- [Chapter 4: JavaScript Concepts (var, let, const, Scope, Hoisting)](#chapter-4-javascript-concepts-var-let-const-scope-hoisting)
 - [Upcoming: Playwright Learning Roadmap](#upcoming-playwright-learning-roadmap)
 - [VS Code Shortcuts](#vs-code-shortcuts)
 - [How to Run](#how-to-run)
@@ -33,15 +34,16 @@ Each chapter contains hands-on `.js` files with comments and examples to reinfor
 | 1 | JavaScript Basics | ✅ Completed |
 | 2 | JavaScript Concepts | ✅ Completed |
 | 3 | Identifiers & Literals | ✅ Completed |
-| 4 | Data Types & Operators | 🔄 Upcoming |
-| 5 | Control Flow & Loops | 🔄 Upcoming |
-| 6 | Functions & Scope | 🔄 Upcoming |
-| 7 | Arrays & Objects | 🔄 Upcoming |
-| 8 | ES6+ Features | 🔄 Upcoming |
-| 9 | Async JavaScript | 🔄 Upcoming |
-| 10 | Playwright Setup & Basics | 🔄 Upcoming |
-| 11 | Playwright Core Concepts | 🔄 Upcoming |
-| 12 | Advanced Playwright | 🔄 Upcoming |
+| 4 | JavaScript Concepts (var, let, const, Scope, Hoisting) | ✅ Completed |
+| 5 | Data Types & Operators | 🔄 Upcoming |
+| 6 | Control Flow & Loops | 🔄 Upcoming |
+| 7 | Functions & Scope | 🔄 Upcoming |
+| 8 | Arrays & Objects | 🔄 Upcoming |
+| 9 | ES6+ Features | 🔄 Upcoming |
+| 10 | Async JavaScript | 🔄 Upcoming |
+| 11 | Playwright Setup & Basics | 🔄 Upcoming |
+| 12 | Playwright Core Concepts | 🔄 Upcoming |
+| 13 | Advanced Playwright | 🔄 Upcoming |
 
 ---
 
@@ -122,6 +124,47 @@ Each chapter contains hands-on `.js` files with comments and examples to reinfor
 - `//` — Single-line comment
 - `/* ... */` — Multi-line comment
 - `/** ... */` — JSDoc / Documentation comment
+
+---
+
+## Chapter 4: JavaScript Concepts (var, let, const, Scope, Hoisting)
+
+**Folder:** `04_Javascript_Concepts/`
+
+### Topics Covered
+
+| File | Topic | Description |
+|------|-------|-------------|
+| `09_var_let_const.js` | Variable Declarations | Differences between `var`, `let`, and `const`; redeclaration and reassignment rules |
+| `10_functions.js` | Functions | Function definition, calling, and reusability |
+| `11_var_explained.js` | `var` Scope | Global scope vs local scope, function-scoped behavior of `var` |
+| `12_let_peope_love.js` | `let` Scope | Block-scoped behavior of `let`, redeclaration restrictions |
+| `13_const_explained.js` | `const` Explained | Constants, immutability, and block-scoped behavior |
+| `14_var_functionscope.js` | `var` Function Scope | Detailed look at function-scoped `var` with nested blocks |
+| `15_let_scope.js` | `let` Block Scope | Detailed look at block-scoped `let` with nested blocks |
+| `16_Hoisting.js` | Hoisting Basics | How `var` declarations are hoisted with `undefined` |
+| `17_hoisting_fn.js` | Hoisting in Functions | Hoisting behavior inside functions |
+
+### Key Takeaways
+
+#### Variable Declarations
+- **`var`** — Function-scoped, allows redeclaration and reassignment, hoisted with `undefined`
+- **`let`** — Block-scoped, allows reassignment but **not** redeclaration, hoisted but in Temporal Dead Zone (TDZ)
+- **`const`** — Block-scoped, **neither** reassignment nor redeclaration allowed, must be initialized at declaration
+
+#### Scope Differences
+
+| Keyword | Scope | Redeclare | Reassign | Hoisted Value |
+|---------|-------|-----------|----------|---------------|
+| `var` | Function | ✅ Yes | ✅ Yes | `undefined` |
+| `let` | Block | ❌ No | ✅ Yes | TDZ (ReferenceError) |
+| `const` | Block | ❌ No | ❌ No | TDZ (ReferenceError) |
+
+#### Hoisting
+- JavaScript moves variable declarations to the top of their scope during compilation
+- `var` is hoisted and initialized with `undefined`
+- `let` and `const` are hoisted but remain in the **Temporal Dead Zone** until their declaration line is reached
+- Function declarations are fully hoisted (both name and body)
 
 ---
 
